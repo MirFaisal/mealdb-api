@@ -1,7 +1,6 @@
 function loadMealdbApi(keyWord) {
-  console.log(keyWord);
-  let url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${keyWord}`;
-  console.log(url);
+  const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${keyWord}`;
+
   fetch(url)
     .then((response) => response.json())
     .then((data) => loadData(data.meals));
@@ -45,3 +44,4 @@ function search() {
   loadMealdbApi(searchWord);
   searchField.value = "";
 }
+loadMealdbApi("fish");
