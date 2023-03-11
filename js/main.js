@@ -44,4 +44,3 @@ function search() {
   loadMealdbApi(searchWord);
   searchField.value = "";
 }
-loadMealdbApi("rice");
