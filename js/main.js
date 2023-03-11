@@ -2,7 +2,7 @@ const loadMealdbApi = (keyWord) => {
   console.log(keyWord);
   let url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${keyWord}`;
   console.log(url);
-  fetch(url)
+  fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${keyWord}`)
     .then((response) => response.json())
     .then((data) => loadData(data.meals));
 };
