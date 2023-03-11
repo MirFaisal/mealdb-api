@@ -38,10 +38,10 @@ function loadData(data) {
 }
 function search() {
   const searchField = document.getElementById("search-field");
-  // const foodName = document.getElementById("food-name");
+  const foodName = document.getElementById("food-name");
   const searchWord = searchField.value;
-  // foodName.innerText = searchWord;
+  foodName.innerText = searchWord;
   loadMealdbApi(searchWord);
   searchField.value = "";
 }
-// loadMealdbApi("fish");
+loadMealdbApi("rice");
