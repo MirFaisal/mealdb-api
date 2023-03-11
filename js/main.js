@@ -1,12 +1,12 @@
-const loadMealdbApi = (keyWord) => {
+function loadMealdbApi(keyWord) {
   console.log(keyWord);
   let url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${keyWord}`;
   console.log(url);
-  fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${keyWord}`)
+  fetch(url)
     .then((response) => response.json())
     .then((data) => loadData(data.meals));
-};
-const loadData = (data) => {
+}
+function loadData(data) {
   const cardWrapper = document.getElementById("card-wrapper");
   cardWrapper.innerHTML = "";
 
@@ -36,12 +36,12 @@ const loadData = (data) => {
           </div>`;
     cardWrapper.appendChild(card);
   });
-};
+}
 function search() {
   const searchField = document.getElementById("search-field");
-  const foodName = document.getElementById("food-name");
+  // const foodName = document.getElementById("food-name");
   const searchWord = searchField.value;
-  foodName.innerText = searchWord;
+  // foodName.innerText = searchWord;
   loadMealdbApi(searchWord);
   searchField.value = "";
 }
