@@ -37,5 +37,11 @@ function loadData(data) {
   });
 }
 function search() {
-  loadMealdbApi("fish");
+  const searchField = document.getElementById("search-field");
+  // const foodName = document.getElementById("food-name");
+  const searchWord = searchField.value;
+  // foodName.innerText = searchWord;
+  loadMealdbApi(searchWord);
+  searchField.value = "";
 }
+// loadMealdbApi("fish");
