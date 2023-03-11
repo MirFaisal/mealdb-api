@@ -39,9 +39,9 @@ const loadData = (data) => {
 function search() {
   const searchField = document.getElementById("search-field");
   const foodName = document.getElementById("food-name");
-  foodName.innerText = searchField.value;
   const keyWord = searchField.value;
+  foodName.innerText = keyWord;
   loadMealdbApi(keyWord);
-  searchField.value = "";
+  // searchField.value = "";
 }
 loadMealdbApi("rice");
