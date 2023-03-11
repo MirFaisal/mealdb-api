@@ -1,4 +1,5 @@
 const loadMealdbApi = (keyWord) => {
+  console.log(keyWord);
   const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${keyWord}`;
   fetch(url)
     .then((response) => response.json())
@@ -9,7 +10,6 @@ const loadData = (data) => {
   cardWrapper.innerHTML = "";
 
   data.forEach((element) => {
-    console.log(element);
     const card = document.createElement("div");
     card.innerHTML = `
     <div class="card mb-3" style="max-width: 540px">
@@ -41,7 +41,7 @@ function search() {
   const foodName = document.getElementById("food-name");
   const keyWord = searchField.value;
   foodName.innerText = keyWord;
-  loadMealdbApi(keyWord);
+  loadMealdbApi("fish");
   // searchField.value = "";
 }
-loadMealdbApi("rice");
+// loadMealdbApi("rice");
