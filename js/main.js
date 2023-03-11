@@ -6,7 +6,7 @@ const loadMealdbApi = (keyWord) => {
 };
 const loadData = (data) => {
   const cardWrapper = document.getElementById("card-wrapper");
-  cardWrapper.innerHTML = ``;
+  cardWrapper.innerHTML = "";
 
   data.forEach((element) => {
     console.log(element);
